@@ -35,6 +35,7 @@
 //! [`Transform`]: https://docs.rs/bevy/0.12.0/bevy/transform/components/struct.Transform.html
 //! [`Quat::slerp()`]: https://docs.rs/bevy/0.12.0/bevy/math/struct.Quat.html#method.slerp
 
+#[allow(unused_imports)]
 use crate::color_vec4_ext::*;
 use bevy::prelude::*;
 
