@@ -1,5 +1,5 @@
+use bevy::color::{Color, Lcha};
 use bevy::math::Vec4;
-use bevy::render::color::Color;
 
 pub(crate) trait ColorExt {
     fn to_vec(&self) -> Vec4;
@@ -7,7 +7,8 @@ pub(crate) trait ColorExt {
 
 impl ColorExt for Color {
     fn to_vec(&self) -> Vec4 {
-        Vec4::new(self.r(), self.g(), self.b(), self.a())
+        let lcha = Lcha::from(*self);
+        Vec4::new(lcha.lightness, lcha.chroma, lcha.hue, lcha.alpha)
     }
 }
 
@@ -17,6 +18,6 @@ pub(crate) trait Vec4Ext {
 
 impl Vec4Ext for Vec4 {
     fn to_color(&self) -> Color {
-        Color::rgba(self.x, self.y, self.z, self.w)
+        Color::lcha(self.x, self.y, self.z, self.w)
     }
 }
