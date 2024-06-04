@@ -1,6 +1,7 @@
 use bevy::color::{Color, Lcha};
 use bevy::math::Vec4;
 
+#[allow(dead_code)]
 pub(crate) trait ColorExt {
     fn to_vec(&self) -> Vec4;
 }
@@ -12,6 +13,7 @@ impl ColorExt for Color {
     }
 }
 
+#[allow(dead_code)]
 pub(crate) trait Vec4Ext {
     fn to_color(&self) -> Color;
 }
